@@ -1,36 +1,50 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.logo{
+
+.logo {
     max-width: 12rem;
     margin-left: 5px;
 }
-header{
+
+header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 2rem;
     background-color: #ececec;
 }
-.listaMenu{
+
+.listaMenu {
     list-style-type: none;
     display: flex;
     gap: 1rem;
 }
+
 .listaMenu li a {
     text-decoration: none;
     color: #1c1c1c;
     font-size: 30px;
     margin-right: 12px;
 }
-.abrirMenu{
+
+.abrirMenu {
     display: none;
 }
-@media screen (max-width: 50px){
-    .menuPrincipal{
+
+@media screen and (max-width: 500px) {
+    .abrirMenu,
+    .CerrarMenu{
+        display: block;
+    }
+        .menuPrincipal {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1rem;
         position: absolute;
         top: 0;
         right: 0;
@@ -39,14 +53,16 @@ header{
         padding: 2rem;
         box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.35);
     }
-    .listaMenu{
+
+    .listaMenu {
         flex-direction: column;
         align-items: end;
     }
-    .listaMenu{
-        color:#d49191;
-    }
-    .lista li a{
+    .listaMenu li a {
         color: #ececec;
     }
+}
+.menuPrincipal.visible{
+    opacity: 1;
+    visibility: visible;
 }
